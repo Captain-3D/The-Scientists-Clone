@@ -1,7 +1,8 @@
 # The-Scientists-Clone
 
 Gameplay:
-	A 3D rouge lite game where you are a mad scientist that is traveling form planet to planet(for some reason). The planets are dangerous so you clone yourself, so that your clone may venture down onto the planet, fighting all that he may find while increasing his stregth and finding lpoot at the same time. 
+	
+	A 3D rouge lite game where you are a mad scientist that is traveling form planet to planet (for some reason). The planets are dangerous so you clone yourself, so that your clone may venture down onto the planet, fighting all that he may find while increasing his stregth and finding lpoot at the same time. 
 
 	This clone is the player and everytime the player dies, a new clone is created. 
 
@@ -39,3 +40,9 @@ Gameplay:
 	UNDECIDED: Not really sure of an end game
 		Some form of boss (Maybe the megacorp that the scientist is running from?)
 		A legendary planet that must be found and cleared?
+
+
+
+
+
+		2

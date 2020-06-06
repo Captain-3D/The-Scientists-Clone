@@ -24,18 +24,12 @@ public class ThirdPersonController : MonoBehaviour {
 	
 	void Awake() {
 		Cursor.lockState = CursorLockMode.Locked;
-		Cursor.visible = true;
+		Cursor.visible = false;
 		cameraTransform = Camera.main.transform;
+		rigidbody = GetComponent<Rigidbody> ();
 	}
 	
 	void Update() {
-		
-		// Look rotation:
-		//transform.Rotate(Vector3.up * Input.GetAxis("Mouse X") * mouseSensitivityX);
-		//verticalLookRotation += Input.GetAxis("Mouse Y") * mouseSensitivityY;
-		//verticalLookRotation = Mathf.Clamp(verticalLookRotation,-60,60);
-		//cameraTransform.localEulerAngles = Vector3.left * verticalLookRotation;
-		
 		// Calculate movement:
 		float inputX = Input.GetAxisRaw("Horizontal");
 		float inputY = Input.GetAxisRaw("Vertical");
@@ -49,11 +43,11 @@ public class ThirdPersonController : MonoBehaviour {
 			transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
 			moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-			controller.Move(moveDir.normalized * walkSpeed * Time.deltaTime);
+			//controller.Move(moveDir.normalized * walkSpeed * Time.deltaTime);
 		}
 
 		// Jump
-		if (Input.GetButtonDown("Jump")) {
+		if (Input.GetKeyDown("Space")) {
 			if (grounded) {
 				rigidbody.AddForce(transform.up * jumpForce);
 			}
@@ -69,5 +63,11 @@ public class ThirdPersonController : MonoBehaviour {
 		else {
 			grounded = false;
 		}	
+	}
+
+	void FixedUpdate() {
+		// Apply movement to rigidbody
+		Vector3 localMove = transform.TransformDirection(moveDir.normalized * walkSpeed) * Time.fixedDeltaTime;
+		rigidbody.MovePosition(rigidbody.position + localMove);
 	}
 }

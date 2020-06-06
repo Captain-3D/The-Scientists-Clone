@@ -40,9 +40,3 @@ Gameplay:
 	UNDECIDED: Not really sure of an end game
 		Some form of boss (Maybe the megacorp that the scientist is running from?)
 		A legendary planet that must be found and cleared?
-
-
-
-
-
-		2

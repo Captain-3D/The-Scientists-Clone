@@ -59,6 +59,11 @@ public class Planet : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        GeneratePlanet();
+    }
+
     public void GeneratePlanet()
     {
         Initialize();

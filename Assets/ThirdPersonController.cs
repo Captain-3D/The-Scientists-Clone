@@ -10,23 +10,23 @@ public class ThirdPersonController : MonoBehaviour {
 	public float walkSpeed = 6;
 	public float jumpForce = 220;
 	public LayerMask groundedMask;
-	public CharacterController controller;
 	public float turnSmoothTime = 0.1f;
 	public float turnSmoothVelocity;
 	public Transform cameraTransform;
+	public CharacterController controller;
 	
 	// System vars
 	bool grounded;
 	float verticalLookRotation;
-	Rigidbody rigidbody;
+	//Rigidbody rigidbody;
 	Vector3 moveDir;
 	
 	
 	void Awake() {
 		Cursor.lockState = CursorLockMode.Locked;
 		Cursor.visible = false;
-		cameraTransform = Camera.main.transform;
-		rigidbody = GetComponent<Rigidbody> ();
+		//cameraTransform = Camera.main.transform;
+		//rigidbody = GetComponent<Rigidbody> ();
 	}
 	
 	void Update() {
@@ -38,20 +38,23 @@ public class ThirdPersonController : MonoBehaviour {
 
 		if(direction.magnitude >= 0.1f)
 		{
-			float targetAngle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg + cameraTransform.eulerAngles.y;
+			float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cameraTransform.eulerAngles.y;
 			float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
 			transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
 			moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-			//controller.Move(moveDir.normalized * walkSpeed * Time.deltaTime);
+			controller.Move(moveDir.normalized * walkSpeed * Time.deltaTime);
+
+			//Vector3 localMove = transform.TransformDirection(moveDir.normalized * walkSpeed) * Time.fixedDeltaTime;
+			//rigidbody.MovePosition(rigidbody.position + localMove);
 		}
 
 		// Jump
-		if (Input.GetKeyDown("Space")) {
-			if (grounded) {
-				rigidbody.AddForce(transform.up * jumpForce);
-			}
-		}
+		//if (Input.GetKeyDown("Space")) {
+			//if (grounded) {
+				//GetComponent<Rigidbody>().AddForce(transform.up * jumpForce);
+			//}
+		//}
 		
 		// Grounded check
 		Ray ray = new Ray(transform.position, -transform.up);
@@ -63,11 +66,5 @@ public class ThirdPersonController : MonoBehaviour {
 		else {
 			grounded = false;
 		}	
-	}
-
-	void FixedUpdate() {
-		// Apply movement to rigidbody
-		Vector3 localMove = transform.TransformDirection(moveDir.normalized * walkSpeed) * Time.fixedDeltaTime;
-		rigidbody.MovePosition(rigidbody.position + localMove);
 	}
 }

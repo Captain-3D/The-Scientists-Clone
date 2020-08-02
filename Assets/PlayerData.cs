@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerData : MonoBehaviour
+[System.Serializable]
+public class PlayerData
 {
-    public int level;
+	public int level;
     public int xp;
 
     public int maxHealth;
@@ -13,32 +14,20 @@ public class PlayerData : MonoBehaviour
     public int maxMana;
     public int currentMana;
 
-    public SliderScript healthBar;
-	public SliderScript manaBar;
-    
-    void Start()
+    public float[] position;
+
+    public PlayerData (Player player)
 	{
-		currentHealth = maxHealth;
-		currentMana = maxMana;
+		level = player.level;
+		xp = player.xp;
+		maxHealth = player.maxHealth;
+		currentHealth = player.currentHealth;
+		maxMana = player.maxMana;
+		currentMana = player.currentMana;
 
-		healthBar.setMaxValue(maxHealth);
-		manaBar.setMaxValue(maxMana);
+		position = new float[3];
+		position[0] = player.transform.position.x;
+		position[1] = player.transform.position.y;
+		position[2] = player.transform.position.z;
 	}
-
-	void Update()
-	{
-		if(Input.GetKeyDown(KeyCode.Space))
-		{
-			TakeDamage(20);
-		}
-	}
-
-	void TakeDamage(int damage)
-	{
-		currentHealth -= damage;
-		healthBar.SetSliderValue(currentHealth);
-	}
-
 }
-
-

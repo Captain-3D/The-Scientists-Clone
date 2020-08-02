@@ -6,8 +6,8 @@ namespace Invector.vCharacterController
     {
         void Awake() 
         {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            //Cursor.lockState = CursorLockMode.Locked;
+            //Cursor.visible = false;
         }
 
         public virtual void ControlAnimatorRootMotion()

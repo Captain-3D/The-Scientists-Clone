@@ -23,8 +23,8 @@ public class ThirdPersonController : MonoBehaviour {
 	
 	
 	void Awake() {
-		Cursor.lockState = CursorLockMode.Locked;
-		Cursor.visible = false;
+		//Cursor.lockState = CursorLockMode.Locked;
+		//Cursor.visible = false;
 		//cameraTransform = Camera.main.transform;
 		//rigidbody = GetComponent<Rigidbody> ();
 	}

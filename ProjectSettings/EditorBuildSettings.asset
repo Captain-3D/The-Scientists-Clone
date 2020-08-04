@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main Menu.unity
+    path: Assets/Main Game/Scenes/MainGame/Main Menu.unity
     guid: 5c33e5a67649744a394e038e8ca7abc1
   - enabled: 1
-    path: Assets/Scenes/Flat Terrain Scene Test.unity
+    path: Assets/Main Game/Scenes/MainGame/Space Ship.unity
+    guid: 63a613dd6d2f549f6b9e93879d2c13b0
+  - enabled: 1
+    path: Assets/Main Game/Scenes/MainGame/Ice Level.unity
     guid: 5ceec73f635b645c2a12a881e5aa69f9
   m_configObjects: {}

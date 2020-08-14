@@ -68,6 +68,7 @@ public class gamestate : MonoBehaviour {
 		maxMP = data.maxMana;
 		mp = data.currentMana;
 
+		activeLevel = "Space Ship";
 		Application.LoadLevel("Space Ship");
 	}
 	

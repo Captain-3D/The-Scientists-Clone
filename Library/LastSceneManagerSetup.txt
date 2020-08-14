@@ -1,9 +1,13 @@
 sceneSetups:
-- path: Assets/Scenes/Main Menu.unity
+- path: Assets/Main Game/Scenes/MainGame/Main Menu.unity
+  isLoaded: 0
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Main Game/Scenes/MainGame/Ice Level.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
-- path: Assets/Scenes/Flat Terrain Scene Test.unity
+- path: Assets/Main Game/Scenes/MainGame/Space Ship.unity
   isLoaded: 0
   isActive: 0
   isSubScene: 0

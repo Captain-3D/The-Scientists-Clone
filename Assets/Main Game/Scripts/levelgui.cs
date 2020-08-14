@@ -22,7 +22,7 @@ public class levelgui : MonoBehaviour {
 		healthBar.SetSliderValue(gamestate.Instance.getHP());
 		manaBar.SetSliderValue(gamestate.Instance.getMP());
 	}
-	
+
 	// ---------------------------------------------------------------------------------------------------
 	// OnGUI()
 	// --------------------------------------------------------------------------------------------------- 
@@ -33,25 +33,20 @@ public class levelgui : MonoBehaviour {
 		healthBar.SetSliderValue(gamestate.Instance.getHP());
 		manaBar.SetSliderValue(gamestate.Instance.getMP());
 
-		// Create buttons to move between level 1 and level 2
-		if (GUI.Button (new Rect (30, 30, 150, 30), "Ice Level"))
+		if(gamestate.Instance.getActiveLevel() == "Space Ship")
 		{
-			gamestate.Instance.setActiveLevel("Ice Level");
-			Application.LoadLevel("Ice Level");
-		}
-		/*
-		if (GUI.Button (new Rect (300, 30, 150, 30), "Load Level 2"))
-		{
-			print ("Moving to level 2");
-			gamestate.Instance.setLevel("Level 2");
-			Application.LoadLevel("level2");
-		}*/
-		
+			if (GUI.Button (new Rect (30, 30, 150, 30), "Ice Level"))
+			{
+				print ("Moving to Ice Level");
+				gamestate.Instance.setActiveLevel("Ice Level");
+				Application.LoadLevel("Ice Level");
+			}
+		}		
 		
 		// Output stats
 		//GUI.Label(new Rect(30, 100, 400, 30), "Name: " + gamestate.Instance.getName());
-		GUI.Label(new Rect(30, 130, 400, 30), "HP: " + gamestate.Instance.getHP().ToString());
-		GUI.Label(new Rect(30, 160, 400, 30), "MP: " + gamestate.Instance.getMP().ToString());
+		GUI.Label(new Rect(540, 480, 400, 30), "HP: " + gamestate.Instance.getHP().ToString());
+		GUI.Label(new Rect(540, 495, 400, 30), "MP: " + gamestate.Instance.getMP().ToString());
 		
 	}
 }

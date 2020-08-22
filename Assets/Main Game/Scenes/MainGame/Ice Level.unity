@@ -3204,6 +3204,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   space: 40
   items: []
+--- !u!114 &579591024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579591021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19dac9196d70a4a9697f064cd82a2de1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth:
+    baseValue: 0
+  damage:
+    baseValue: 0
+  armor:
+    baseValue: 0
 --- !u!1001 &632634309
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6012,7 +6030,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1307825701}
-  m_LocalRotation: {x: 0.13244645, y: -0.000000008657425, z: -0.00000004377024, w: 0.9911902}
+  m_LocalRotation: {x: 0.13244644, y: 0.000000006112462, z: -0.000000045743846, w: 0.9911902}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6164,7 +6182,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1319425682}
-  m_LocalRotation: {x: 0.11692489, y: -0.00000003146383, z: 0.0000000037043137, w: 0.9931408}
+  m_LocalRotation: {x: 0.11692488, y: 0.00000003146383, z: -0.0000000037043137, w: 0.9931408}
   m_LocalPosition: {x: 218.52, y: 25.985645, z: 272.07697}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -6289,6 +6307,7 @@ GameObject:
   - component: {fileID: 1344209694}
   - component: {fileID: 1344209693}
   - component: {fileID: 1344209695}
+  - component: {fileID: 1344209696}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -6432,6 +6451,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryUI: {fileID: 1612611833}
   itemsParent: {fileID: 1255342190}
+--- !u!114 &1344209696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344209687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce688bb254dc6449ead975a445d5b472, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultWear: []
+  targetMesh: {fileID: 0}
 --- !u!1001 &1345595319
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8262,7 +8295,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1760295079}
-  m_LocalRotation: {x: 0.11439529, y: -0.00000001237488, z: -0.000000039008672, w: 0.9934354}
+  m_LocalRotation: {x: 0.11439529, y: 0.000000021811978, z: -0.00000004294533, w: 0.9934354}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

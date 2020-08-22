@@ -14,6 +14,8 @@ public class PlayerData
     public int maxMana;
     public int currentMana;
 
+    public List<Item> inventory;
+
     //public float[] position;
 
     public PlayerData (Player player)
@@ -25,9 +27,7 @@ public class PlayerData
 		maxMana = player.maxMana;
 		currentMana = player.currentMana;
 
-		//position = new float[3];
-		//position[0] = player.transform.position.x;
-		//position[1] = player.transform.position.y;
-		//position[2] = player.transform.position.z;
+		inventory = new List<Item>();
+		inventory = Inventory.instance.returnList();
 	}
 }

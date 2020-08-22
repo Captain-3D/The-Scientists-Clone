@@ -48,4 +48,13 @@ public class Inventory : MonoBehaviour {
 			onItemChangedCallback.Invoke();
 	}
 
+	public List<Item> returnList ()
+	{
+		return items;
+	}
+
+	public void getList(List<Item> itemsList)
+	{
+		items = itemsList;
+	}
 }

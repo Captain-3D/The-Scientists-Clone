@@ -6,6 +6,7 @@
 */
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class gamestate : MonoBehaviour {
 	
@@ -19,6 +20,7 @@ public class gamestate : MonoBehaviour {
 	private int hp;						// Current HP
 	private int mp;						// Current MP
 	private int exp;					// Characters Experience Points
+	public List<Item> inventory;
 	
 	
 	public static gamestate Instance
@@ -67,6 +69,7 @@ public class gamestate : MonoBehaviour {
 		hp = data.currentHealth;
 		maxMP = data.maxMana;
 		mp = data.currentMana;
+		Inventory.instance.getList(data.inventory);
 
 		activeLevel = "Space Ship";
 		Application.LoadLevel("Space Ship");
@@ -96,6 +99,11 @@ public class gamestate : MonoBehaviour {
 	public void setHP(int newHP)
 	{
 		hp = newHP;
+
+		if(hp == 0 || hp < 0)
+		{
+			hp = 0;
+		}
 	}
 
 	public int getMP()

@@ -13,25 +13,13 @@ public class Player : MonoBehaviour
     public int maxMana;
     public int currentMana;
 
-    //public SliderScript healthBar;
-	//public SliderScript manaBar;
-
-    void Start()
-	{
-		/*currentHealth = maxHealth;
-		currentMana = maxMana;
-
-		healthBar.setMaxValue(maxHealth);
-		manaBar.setMaxValue(maxMana);
-		healthBar.SetSliderValue(currentHealth);
-		manaBar.SetSliderValue(currentMana);*/
-	}
+    public List<Item> inventory;
 
 	void Update()
 	{
 		if(Input.GetKeyDown(KeyCode.Space))
 		{
-			TakeDamage(20);
+			TakeDamage(10);
 		}
 	}
 
@@ -50,13 +38,6 @@ public class Player : MonoBehaviour
 		currentHealth = data.currentHealth;
 		maxMana = data.maxMana;
 		currentMana = data.currentMana;
-
-		//Vector3 position;
-		//position.x = data.position[0];
-		//position.y = data.position[1] + 1;
-		//position.z = data.position[2];
-		//transform.position = position;
-
 	}
 
 	public void DeletePlayer()
@@ -66,8 +47,7 @@ public class Player : MonoBehaviour
 
 	void TakeDamage(int damage)
 	{
-		gamestate.Instance.setHP(gamestate.Instance.getHP() - 10);
-		//healthBar.SetSliderValue(currentHealth);
+		gamestate.Instance.setHP(gamestate.Instance.getHP() - damage);
 	}
 
 }

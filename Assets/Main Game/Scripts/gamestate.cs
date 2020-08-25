@@ -1,10 +1,4 @@
-﻿/*
-
-    Notes:
-        This script is a C# game state manager for Unity 3D; you should review the gamestart.cs 
-        script to help understand how to implement game states.
-*/
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -20,9 +14,9 @@ public class gamestate : MonoBehaviour {
 	private int hp;						// Current HP
 	private int mp;						// Current MP
 	private int exp;					// Characters Experience Points
-	public List<Item> inventory;
+	Inventory inventory;				// Our current inventory
 	
-	
+
 	public static gamestate Instance
 	{
 		get
@@ -54,6 +48,9 @@ public class gamestate : MonoBehaviour {
 		mp = maxMP;
 		exp = 0;
 
+		DontDestroyOnLoad(Inventory.Instance);
+		inventory = Inventory.Instance;
+
 		Application.LoadLevel("Space Ship");
 	}
 	
@@ -69,7 +66,9 @@ public class gamestate : MonoBehaviour {
 		hp = data.currentHealth;
 		maxMP = data.maxMana;
 		mp = data.currentMana;
-		Inventory.instance.getList(data.inventory);
+
+		DontDestroyOnLoad(Inventory.Instance);
+		inventory = Inventory.Instance;
 
 		activeLevel = "Space Ship";
 		Application.LoadLevel("Space Ship");

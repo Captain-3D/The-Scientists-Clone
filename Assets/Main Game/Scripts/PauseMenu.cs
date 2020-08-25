@@ -40,8 +40,6 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadMenu()
     {
-        Time.timeScale = 1f;
-        //SceneManager.LoadScene("Main Menu");
         Resume();
 
         gamestate.Instance.setActiveLevel("Main Menu");
@@ -50,7 +48,6 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadShip()
     {
-        Time.timeScale = 1f;
         Resume();
         
         gamestate.Instance.setActiveLevel("Space Ship");

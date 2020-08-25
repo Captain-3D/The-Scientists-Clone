@@ -21,6 +21,7 @@ public class MainMenu : MonoBehaviour
 		print("Loading game");
 
 		DontDestroyOnLoad(gamestate.Instance);
+
 		gamestate.Instance.loadState();	
 
 	}

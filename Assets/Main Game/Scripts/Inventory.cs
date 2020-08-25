@@ -6,7 +6,7 @@ public class Inventory : MonoBehaviour {
 
 	#region Singleton
 
-	public static Inventory instance;
+	private static Inventory instance;
 
 	void Awake ()
 	{
@@ -15,10 +15,23 @@ public class Inventory : MonoBehaviour {
 
 	#endregion
 
+	public static Inventory Instance
+	{
+		get
+		{
+			if(instance == null)
+			{
+				instance = new GameObject("Inventory").AddComponent<Inventory> ();
+			}
+ 
+			return instance;
+		}
+	}
+
 	public delegate void OnItemChanged();
 	public OnItemChanged onItemChangedCallback;
 
-	public int space = 10;	// Amount of item spaces
+	public int space = 40;	// Amount of item spaces
 
 	// Our current list of items in the inventory
 	public List<Item> items = new List<Item>();
@@ -26,13 +39,15 @@ public class Inventory : MonoBehaviour {
 	// Add a new item if enough room
 	public void Add (Item item)
 	{
-		if (item.showInInventory) {
-			if (items.Count >= space) {
+		if (item.showInInventory) 
+		{
+			if (items.Count >= space) 
+			{
 				Debug.Log ("Not enough room.");
 				return;
 			}
 
-			items.Add (item);
+			items.Add(item);
 
 			if (onItemChangedCallback != null)
 				onItemChangedCallback.Invoke ();

@@ -28,6 +28,6 @@ public class PlayerData
 		currentMana = player.currentMana;
 
 		inventory = new List<Item>();
-		inventory = Inventory.instance.returnList();
+		inventory = Inventory.Instance.returnList();
 	}
 }

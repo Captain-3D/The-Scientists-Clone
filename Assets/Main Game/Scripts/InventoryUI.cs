@@ -13,8 +13,9 @@ public class InventoryUI : MonoBehaviour {
 
 	void Start ()
 	{
-		inventory = Inventory.instance;
-		inventory.onItemChangedCallback += UpdateUI;
+		inventory = Inventory.Instance;
+		//inventory.onItemChangedCallback += UpdateUI;
+
 	}
 
 	// Check to see if we should open/close the inventory
@@ -23,6 +24,11 @@ public class InventoryUI : MonoBehaviour {
 		if (Input.GetButtonDown("Inventory"))
 		{
 			inventoryUI.SetActive(!inventoryUI.activeSelf);
+			UpdateUI();
+		}
+
+		if(inventoryUI.activeSelf)
+		{
 			UpdateUI();
 		}
 	}

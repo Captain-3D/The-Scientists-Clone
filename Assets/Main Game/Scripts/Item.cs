@@ -19,7 +19,7 @@ public class Item : ScriptableObject {
 	// Call this method to remove the item from inventory
 	public void RemoveFromInventory ()
 	{
-		Inventory.instance.Remove(this);
+		Inventory.Instance.Remove(this);
 	}
 
 }
